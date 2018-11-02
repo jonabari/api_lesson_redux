@@ -62,33 +62,21 @@ $('#categories').on('click', '.dropdown-item', function(event){
 
             var data = response.results;
 
-            console.log(data);
-
             var selection = $('<h3>');
             selection.html(data[0].category);
-            $('#questions').append(selection, '<br>');
+            $('#questions').append('<br>', selection, '<br>');
 
             for (let i = 0 ; i < data.length ; i++){
-                if (data[i].type === "boolean"){
-                    var question = $('<h5>');
-                    question.html(`#${i+1}. ${data[i].question}`);
+                var question = $('<h5>');
+                question.html(`#${i+1}. ${data[i].question}`);
 
-                    var answer = $('<h6>');
-                    answer.html(`ANSWER: ${data[i].correct_answer}`);
+                var answer = $('<h6>');
+                answer.html(`ANSWER: ${data[i].correct_answer}`);
 
-                    $('#questions').append(question, answer, '<br>');
-
-                } else if (data[i].type === "multiple"){
-                    var question = $('<h5>');
-                    question.html(`#${i+1}. ${data[i].question}`);
-
-                    var answer = $('<h6>');
-                    answer.html(`ANSWER: ${data[i].correct_answer}`);
-
-                    $('#questions').append(question, answer, '<br>');
-                }
+                $('#questions').append(question, answer, '<br>');
             };
 
+            //BONUS: Differentiate between boolean and multiple choice type questions, and list the possible answers
     }); 
 });
 
