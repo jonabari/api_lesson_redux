@@ -1,8 +1,8 @@
 // Background image is NASA api pic of the day
 function getImage(){
 
-    var key = '8VGfPrXF3DyfP5agTz5qj23DxCB5pBg5BBkCWLg8'
-    var url = `https://api.nasa.gov/planetary/apod?api_key=${key}`
+    var key = '8VGfPrXF3DyfP5agTz5qj23DxCB5pBg5BBkCWLg8';
+    var url = `https://api.nasa.gov/planetary/apod?api_key=${key}`;
 
     $.ajax({
        url: url,
